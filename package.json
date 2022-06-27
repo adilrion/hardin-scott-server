@@ -1,0 +1,19 @@
+{
+  "name": "kabid-vai-server",
+  "version": "1.0.0",
+  "description": "Kabid Hassan Server Site",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start-dev": "nodemon node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adil Mahmoud Rion",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.3.5"
+  }
+}
