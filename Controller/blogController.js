@@ -15,13 +15,13 @@ exports.getBlog = (req, res) => {
 exports.getSingleBlog = (req, res) => {};
 
 exports.postBlog = (req, res) => {
-  const { blog, title, cover_img, first_column } = req.body;
+  const { blog, title, cover_img, excerpt } = req.body;
   console.log(req.body);
   const newBlog = new blogs({
     blog,
     title,
     cover_img,
-    first_column,
+    excerpt,
   });
   newBlog
     .save()
@@ -36,12 +36,17 @@ exports.postBlog = (req, res) => {
 exports.putBlog = (req, res) => {};
 exports.putSingleBlog = (req, res) => {
   const { id } = req.params;
-  const { blog } = req.body;
+  console.log(id);
+  const { title, cover_img, excerpt, blog } = req.body;
+  console.log(req.body);
   blogs
-    .findByIdAndUpdate(
+    .updateOne(
       { _id: id },
       {
         $set: {
+          title,
+          cover_img,
+          excerpt,
           blog,
         },
       }

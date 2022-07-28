@@ -35,13 +35,15 @@ exports.putArt = (req, res) => {};
 
 exports.putSingleArt = (req, res) => {
   const { id } = req.params;
-  const { art } = req.body;
+  const { title, art_img } = req.body;
+
   art
-    .findByIdAndUpdate(
+    .updateOne(
       { _id: id },
       {
         $set: {
-          art,
+          title,
+          art_img,
         },
       }
     )

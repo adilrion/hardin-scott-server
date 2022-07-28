@@ -19,7 +19,7 @@ const blogSchema = new Schema(
       require: true,
       trim: true,
     },
-    first_column: {
+    excerpt: {
       type: String,
       require: true,
       trim: true,
