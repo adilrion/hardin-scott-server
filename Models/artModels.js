@@ -8,7 +8,7 @@ const artSchema = new Schema({
     require: true,
     trim: true,
   },
-  art_img: {
+  src: {
     type: String,
     require: true,
     trim: true,

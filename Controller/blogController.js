@@ -12,11 +12,22 @@ exports.getBlog = (req, res) => {
       });
     });
 };
-exports.getSingleBlog = (req, res) => {};
+exports.getSingleBlog = (req, res) => {
+  const { id } = req.params;
+  blogs
+    .findById(id)
+    .then((data) => {
+      res.json(data);
+    })
+    .catch((error) => {
+      res.status(500).json({
+        error: "error occurred",
+      });
+    });
+};
 
 exports.postBlog = (req, res) => {
   const { blog, title, cover_img, excerpt } = req.body;
-  console.log(req.body);
   const newBlog = new blogs({
     blog,
     title,
@@ -27,7 +38,6 @@ exports.postBlog = (req, res) => {
     .save()
     .then((data) => {
       res.send(data);
-      // console.log(data);
     })
     .catch((error) => {
       res.send(error);
@@ -36,9 +46,7 @@ exports.postBlog = (req, res) => {
 exports.putBlog = (req, res) => {};
 exports.putSingleBlog = (req, res) => {
   const { id } = req.params;
-  console.log(id);
   const { title, cover_img, excerpt, blog } = req.body;
-  console.log(req.body);
   blogs
     .updateOne(
       { _id: id },
