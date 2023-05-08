@@ -12,6 +12,7 @@ exports.getBlog = (req, res) => {
       });
     });
 };
+
 exports.getSingleBlog = (req, res) => {
   const { id } = req.params;
   blogs
