@@ -1,7 +1,7 @@
 {
-  "name": "kabid-vai-server",
+  "name": "hardin-scott-server",
   "version": "1.0.0",
-  "description": "Kabid Hassan Server Site",
+  "description": "Hardin Scott Server Site",
   "main": "index.js",
   "engines": {
     "node": "18.x"

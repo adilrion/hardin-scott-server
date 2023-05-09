@@ -35,7 +35,7 @@ app.use("/blog", blog);
 app.use("/art", art);
 
 app.get("/", (req, res) => {
-  res.send(`Kabid Hassan`);
+  res.send(`Hardin Scott`);
 });
 
 app.listen(port, () => {
